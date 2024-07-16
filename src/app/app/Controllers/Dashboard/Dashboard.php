@@ -11,4 +11,8 @@ class Dashboard extends BaseController
     {
         return view('dashboard/dashboard');
     }
+    public function ver()
+    {
+        die('ver');
+    }
 }
