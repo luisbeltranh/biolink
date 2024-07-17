@@ -3,13 +3,14 @@
 namespace App\Controllers\Dashboard;
 
 use App\Controllers\BaseController;
-
+use CodeIgniter\Shield\Auth;
 
 class Dashboard extends BaseController
 {
     public function index()
     {
         $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['nombreUsuario'] = auth()->getUser()->username;
         echo view('dashboard/templates/head', $datos);
         echo view('dashboard/templates/topmenu');
         echo view('dashboard/templates/sidebar');
