@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 class Inicio extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $datos['estaLogeado'] = auth()->loggedIn();
-        echo view('templates/head', $datos);
-        echo view('templates/topmenu');
+        //echo view('templates/head', $datos);
+        //echo view('templates/topmenu');
         //echo view('templates/navmenu');
         echo view('inicio');
-        echo view('templates/footer');
+        //echo view('templates/footer');
     }
 }
