@@ -10,7 +10,8 @@ This affects the color of: text highlights, buttons, bg, social media icons, for
         Background Color
     =====================================*/
     body {
-        background-color: #eae7dc;
+        /* 1 background-color: #eae7dc; */
+        background-color: #2B2E4A;
         transition: all 0.5s;
     }
     
@@ -18,12 +19,12 @@ This affects the color of: text highlights, buttons, bg, social media icons, for
         Custom Text Color
     =====================================*/
     .custom-text-color-primary {
-        color: #2e2e2e;
+        color: #d3d3d3;
         transition: all 0.5s;
     }
 
     .custom-text-color-secondary {
-        color: #636363;
+        color: #a7a7a7;
         transition: all 0.5s;
     }
 
@@ -65,7 +66,7 @@ This affects the color of: text highlights, buttons, bg, social media icons, for
     =====================================*/
     .about-social li a {
         color: white;
-        background-color: #8e8d8a;
+        background-color: #903749;
         box-shadow: 2px 5px 8px rgba(0,0,0,30%);
         border: 1px solid rgba(255, 255, 255, 0.25);
         transition: all 0.5s;
@@ -82,8 +83,8 @@ This affects the color of: text highlights, buttons, bg, social media icons, for
         Main Buttons
     =====================================*/
     .btn-custom {
-        color: rgb(255, 255, 255);
-        background-color: #E85A50;
+        color: rgb(31, 31, 31);
+        background-color: #E84545;
         box-shadow: 3px 5px 8px rgba(0,0,0,40%);
         border: 1px solid rgba(255, 255, 255, 0.25);
         transition: all 0.5s;
@@ -99,7 +100,7 @@ This affects the color of: text highlights, buttons, bg, social media icons, for
     .btn-custom:hover,
     .open > .dropdown-toggle.btn-custom {
         color: #fff;
-        background-color: rgba(255, 255, 255, 0.40);
+        background-color: #53354A66;
         border: 1px solid rgba(255, 255, 255, 0.25);
         transition: all 0.5s;
     }
