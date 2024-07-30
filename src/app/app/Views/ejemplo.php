@@ -128,4 +128,4 @@
             </div>
         </div>
     </div>
-    <a href="#home" class="back_top" style="border-radius: 50%;"><i class="bi bi-chevron-up"></i>asdfasdf</a>
+    <a href="#home" class="back_top" style="border-radius: 50%;"><i class="bi bi-chevron-up"></i></a>

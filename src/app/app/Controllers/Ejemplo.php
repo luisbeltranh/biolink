@@ -45,4 +45,15 @@ class Ejemplo extends BaseController
         echo view('ejemplo-gradient');
         echo view('templates/footer-ejemplo');
     }
+    public function tema1()
+    {
+        $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['estilo'] = 'tema1';
+
+        echo view('templates/head-ejemplo', $datos);
+        //echo view('templates/topmenu');
+        //echo view('templates/navmenu');
+        echo view('tema1');
+        echo view('templates/footer-tema');
+    }
 }

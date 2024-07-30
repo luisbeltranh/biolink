@@ -29,6 +29,13 @@
     <?php
     }
     ?>
+    <?php
+    if ($estilo == 'tema1') {
+    ?>
+        <link rel="stylesheet" type="text/css" href="/assets/user/css/temas.css">
+    <?php
+    }
+    ?>
 
 
 </head>
