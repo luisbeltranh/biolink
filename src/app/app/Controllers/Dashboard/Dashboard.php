@@ -11,6 +11,7 @@ class Dashboard extends BaseController
     {
         $datos['estaLogeado'] = auth()->loggedIn();
         $datos['nombreUsuario'] = auth()->getUser()->username;
+        $datos['titulo_breadcrumbs'] = "Dashboard";
         echo view('dashboard/templates/head', $datos);
         echo view('dashboard/templates/topmenu');
         echo view('dashboard/templates/sidebar');
@@ -21,5 +22,29 @@ class Dashboard extends BaseController
     public function ver()
     {
         die('ver');
+    }
+    public function appearance()
+    {
+        $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['nombreUsuario'] = auth()->getUser()->username;
+        $datos['titulo_breadcrumbs'] = "Apariencia";
+        echo view('dashboard/templates/head', $datos);
+        echo view('dashboard/templates/topmenu');
+        echo view('dashboard/templates/sidebar');
+        echo view('dashboard/templates/breadcrumbs');
+        echo view('dashboard/appearance');
+        echo view('dashboard/templates/footer');
+    }
+    public function links()
+    {
+        $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['nombreUsuario'] = auth()->getUser()->username;
+        $datos['titulo_breadcrumbs'] = "Apariencia";
+        echo view('dashboard/templates/head', $datos);
+        echo view('dashboard/templates/topmenu');
+        echo view('dashboard/templates/sidebar');
+        echo view('dashboard/templates/breadcrumbs');
+        echo view('dashboard/links');
+        echo view('dashboard/templates/footer');
     }
 }
