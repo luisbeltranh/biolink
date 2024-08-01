@@ -17,23 +17,20 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
+                <li class="nav-item"> <a href="<?php echo $menu_activo == 'dashboard' ? '#' : base_url('dashboard/'); ?>" class="nav-link <?php echo $menu_activo == 'dashboard' ? 'active' : ''; ?>"> <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                             Dashboard
-                            <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="./index.html" class="nav-link active"> <i class="nav-icon bi bi-link-45deg"></i>
-                                <p>Enlaces</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="./index2.html" class="nav-link"> <i class="nav-icon bi bi-columns-gap"></i>
-                                <p>Apariencia</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="./index3.html" class="nav-link"> <i class="nav-icon bi bi-shop"></i>
-                                <p>Tienda</p>
-                            </a> </li>
-                    </ul>
+                <li class="nav-item"> <a href="<?php echo base_url('dashboard/links'); ?>" class="nav-link <?php echo $menu_activo == 'enlaces' ? 'active' : ''; ?>"> <i class="nav-icon bi bi-link-45deg"></i>
+                        <p>Enlaces</p>
+                    </a> </li>
+                <li class="nav-item"> <a href="<?php echo $menu_activo == 'apariencia' ? '#' : base_url('dashboard/appearance'); ?>" class="nav-link <?php echo $menu_activo == 'apariencia' ? 'active' : ''; ?>"> <i class="nav-icon bi bi-columns-gap"></i>
+                        <p>Apariencia</p>
+                    </a> </li>
+                <li class="nav-item"> <a href="<?php echo $menu_activo == 'tienda' ? '#' : base_url('dashboard/shop'); ?>" class="nav-link <?php echo $menu_activo == 'shop' ? 'active' : ''; ?>"> <i class="nav-icon bi bi-shop"></i>
+                        <p>Tienda</p>
+                    </a> </li>
                 </li>
             </ul> <!--end::Sidebar Menu-->
         </nav>

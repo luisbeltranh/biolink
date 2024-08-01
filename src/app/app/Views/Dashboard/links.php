@@ -1,60 +1,75 @@
 <div class="app-content"> <!--begin::Container-->
-    <div class="container"> <!--begin::Row-->
-        <div class="row">
-            <div class="col-lg-6">
-                <button onclick="crearEnlace()">hola</button>
+    <div class="container-fluid"> <!--begin::Row-->
+        <div class="row justify-content-center pb-4">
+            <div class="col-lg-5">
+                <button class="btn btn-primary btn-lg col-12">Nuevo Enlace</button>
             </div>
         </div>
-        <div class="row col-lg-5 justify-content-center"> <!--begin::Col-->
-            <div class="list-group" id="enlaceid">
-                <div class="info-box text-bg-primary list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
-                    <div class="info-box-content"> <span class="info-box-text">Bookmarks 1</span> <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div> <span class="progress-description">
-                            70% Increase in 30 Days
-                        </span>
-                    </div> <!-- /.info-box-content -->
-                </div> <!-- /.info-box -->
-                <div class="info-box list-group-itemy"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
-                    <div class="info-box-content"> <span class="info-box-text">Bookmarks 2</span> <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div> <span class="progress-description">
-                            70% Increase in 30 Days
-                        </span>
-                    </div> <!-- /.info-box-content -->
-                </div> <!-- /.info-box -->
-                <div class="info-box text-bg-primary list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
-                    <div class="info-box-content"> <span class="info-box-text">Bookmarks 3</span> <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div> <span class="progress-description">
-                            70% Increase in 30 Days
-                        </span>
-                    </div> <!-- /.info-box-content -->
-                </div> <!-- /.info-box -->
-                <div class="info-box text-bg-primary list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
-                    <div class="info-box-content"> <span class="info-box-text">Bookmarks 4</span> <span class="info-box-number">41,410</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div> <span class="progress-description">
-                            70% Increase in 30 Days
-                        </span>
-                    </div> <!-- /.info-box-content -->
-                </div> <!-- /.info-box -->
-            </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="list-group" id="enlaceid">
+                    <?php
+                    foreach ($enlaces as $enlace) {
+                    ?>
+                        <div class="info-box list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
 
-        </div> <!--end::Row--> <!--begin::Row-->
+                            <div class="info-box-content">
+                                <span class="info-box-text"><?php echo $enlace['titulo']; ?></span>
+                                <span class="info-box-number"><a href="<?php echo $enlace['enlace_url']; ?>"><?php echo $enlace['enlace_url']; ?></a></span>
+                                <span class="progress-description">
+                                    <a class="icon-link link-primary" href="#">
+                                        <i class="bi bi-pencil-square" style="font-size: 1.2rem;"></i>
+                                    </a>
+                                    <a class="icon-link link-danger px-3" href="#">
+                                        <i class="bi bi-trash3" style="font-size: 1.2rem;"></i>
+                                    </a>
+                                </span>
+                            </div> <!-- /.info-box-content -->
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="list-group" id="enlaceid">
+                    <div class="info-box list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Titulo</span>
+                            <span class="info-box-number">Enlace</span>
+                            <span class="progress-description">
+                                <a class="icon-link link-primary" href="#">
+                                    <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:"></i>
+                                </a>
+                                <a class="icon-link link-danger px-3" href="#">
+                                    <i class="bi bi-trash3" style="font-size: 1.2rem;"></i>
+                                </a>
+                            </span>
+                        </div> <!-- /.info-box-content -->
+                    </div> <!-- /.info-box -->
+                    <div class="info-box list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Titulo</span>
+                            <span class="info-box-number">Enlace</span>
+                            <span class="progress-description">
+                                <a class="icon-link link-primary" href="#">
+                                    <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:"></i>
+                                </a>
+                                <a class="icon-link link-danger px-3" href="#">
+                                    <i class="bi bi-trash3" style="font-size: 1.2rem;"></i>
+                                </a>
+                            </span>
+                        </div> <!-- /.info-box-content -->
+                    </div> <!-- /.info-box -->
+                </div>
+            </div>
+        </div>
+
     </div> <!--end::Container-->
 </div> <!--end::App Content-->
 </main> <!--end::App Main--> <!--begin::Footer-->
-<footer class="app-footer"> <!--begin::To the end-->
-    <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end--> <!--begin::Copyright--> <strong>
-        Copyright &copy; 2014-2024&nbsp;
-        <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-    </strong>
-    All rights reserved.
-    <!--end::Copyright-->
-</footer> <!--end::Footer-->
+
 </div> <!--end::App Wrapper--> <!--begin::Script-->
