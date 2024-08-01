@@ -39,7 +39,7 @@ class Dashboard extends BaseController
     {
         $datos['estaLogeado'] = auth()->loggedIn();
         $datos['nombreUsuario'] = auth()->getUser()->username;
-        $datos['titulo_breadcrumbs'] = "Apariencia";
+        $datos['titulo_breadcrumbs'] = "Enlaces";
         echo view('dashboard/templates/head', $datos);
         echo view('dashboard/templates/topmenu');
         echo view('dashboard/templates/sidebar');

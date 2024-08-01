@@ -212,6 +212,9 @@
     );
     sparkline3.render();
 </script> <!--end::Script-->
+<script src="/assets/admin/js/Sortable.min.js"></script>
+<script src="/assets/admin/js/options.js"></script>
+
 </body><!--end::Body-->
 
 </html>
