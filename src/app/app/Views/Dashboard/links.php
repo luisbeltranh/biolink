@@ -2,7 +2,7 @@
     <div class="container-fluid"> <!--begin::Row-->
         <div class="row justify-content-center pb-4">
             <div class="col-lg-5">
-                <button class="btn btn-primary btn-lg col-12">Nuevo Enlace</button>
+                <a class="btn btn-primary btn-lg col-12" href="<?php echo base_url('dashboard/new_link') ?>">Nuevo Enlace</a>
             </div>
         </div>
         <div class="row justify-content-center">

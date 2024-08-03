@@ -54,6 +54,48 @@ class Dashboard extends BaseController
         echo view('dashboard/links');
         echo view('dashboard/templates/footer');
     }
+    public function new_link()
+    {
+        helper('form');
+        if ($this->request->getMethod() == 'POST') {
+            $rules = [
+                'tituloEnlace' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'El campo "Título" es requerido',
+                    ]
+                ],
+                'urlEnlace' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'El campo "URL del Enlace" es requerido',
+                    ]
+
+                ],
+            ];
+            if ($this->validate($rules)) {
+                $modelo = new EnlaceModel();
+                $modelo->save($_POST);
+                return redirect()->to('/dashboard/links');
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
+
+        $modelo = new EnlaceModel();
+        $enlaces = $modelo->findAll();
+        $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['nombreUsuario'] = auth()->getUser()->username;
+        $datos['titulo_breadcrumbs'] = "Nuevo Enlace";
+        $datos['menu_activo'] = "enlaces";
+        $datos['enlaces'] = $enlaces;
+        echo view('dashboard/templates/head', $datos);
+        echo view('dashboard/templates/topmenu');
+        echo view('dashboard/templates/sidebar');
+        echo view('dashboard/templates/breadcrumbs');
+        echo view('dashboard/new_link');
+        echo view('dashboard/templates/footer');
+    }
     public function shop()
     {
         $datos['estaLogeado'] = auth()->loggedIn();

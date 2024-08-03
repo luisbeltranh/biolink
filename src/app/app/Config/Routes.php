@@ -15,6 +15,7 @@ $routes->group('dashboard', function ($routes) {
     $routes->add('', 'Dashboard\Dashboard::index');
     $routes->add('appearance', 'Dashboard\Dashboard::appearance');
     $routes->add('links', 'Dashboard\Dashboard::links');
+    $routes->add('new_link', 'Dashboard\Dashboard::new_link');
     $routes->add('ver', 'Dashboard\Dashboard::ver');
 });
 service('auth')->routes($routes);
