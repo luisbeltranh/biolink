@@ -11,13 +11,16 @@
                     <?php echo form_open('dashboard/new_link') ?>
 
                     <div class="card-body">
+                        <?= validation_list_errors() ?>
+
                         <div class="mb-3">
                             <?= form_label('Título', 'tituloEnlace', ['class' => 'form-label']) ?>
-                            <?= form_input('tituloEnlace', set_value('nombre_empresa'), ['class' => 'form-control', 'id' => 'tituloEnlace']) ?>
+                            <?= form_input('tituloEnlace', set_value('tituloEnlace'), ['class' => 'form-control', 'id' => 'tituloEnlace']) ?>
                         </div>
                         <div class="mb-3">
                             <?= form_label('URL del enlace', 'urlEnlace', ['class' => 'form-label']) ?>
-                            <?= form_input('urlEnlace', '', ['class' => 'form-control', 'id' => 'urlEnlace']) ?>
+                            <?= form_input('urlEnlace', set_value('urlEnlace'), ['class' => 'form-control', 'id' => 'urlEnlace']) ?>
+
                             <?= form_hidden('tipoEnlace', '1') ?>
                         </div>
                     </div>

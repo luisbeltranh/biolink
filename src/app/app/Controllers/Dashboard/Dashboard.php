@@ -73,13 +73,14 @@ class Dashboard extends BaseController
 
                 ],
             ];
-            if ($this->validate($rules)) {
-                $modelo = new EnlaceModel();
-                $modelo->save($_POST);
+            $data = $this->request->getPost(array_keys($rules));
+            if ($this->validateData($data, $rules)) {
+                $validData = $this->validator->getValidated();
                 return redirect()->to('/dashboard/links');
-            } else {
-                $data['validation'] = $this->validator;
             }
+
+            // return redirect()->to('/dashboard/new_link')->withInput();
+            //return redirect()->back()->withInput();
         }
 
         $modelo = new EnlaceModel();
