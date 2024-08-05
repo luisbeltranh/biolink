@@ -15,11 +15,23 @@
 
                         <div class="mb-3">
                             <?= form_label('Título', 'tituloEnlace', ['class' => 'form-label']) ?>
-                            <?= form_input('tituloEnlace', set_value('tituloEnlace'), ['class' => 'form-control', 'id' => 'tituloEnlace']) ?>
+                            <?php
+                            if (validation_show_error('tituloEnlace') == '') {
+                                echo form_input('tituloEnlace', set_value('tituloEnlace'), ['class' => 'form-control', 'id' => 'tituloEnlace']);
+                            } else {
+                                echo form_input('tituloEnlace', set_value('tituloEnlace'), ['class' => 'form-control alert alert-danger', 'id' => 'tituloEnlace']);
+                            }
+                            ?>
                         </div>
                         <div class="mb-3">
                             <?= form_label('URL del enlace', 'urlEnlace', ['class' => 'form-label']) ?>
-                            <?= form_input('urlEnlace', set_value('urlEnlace'), ['class' => 'form-control', 'id' => 'urlEnlace']) ?>
+                            <?php
+                            if (validation_show_error('urlEnlace') == '') {
+                                echo form_input('urlEnlace', set_value('urlEnlace'), ['class' => 'form-control', 'id' => 'urlEnlace']);
+                            } else {
+                                echo form_input('urlEnlace', set_value('urlEnlace'), ['class' => 'form-control alert alert-danger', 'id' => 'urlEnlace']);
+                            }
+                            ?>
 
                             <?= form_hidden('tipoEnlace', '1') ?>
                         </div>

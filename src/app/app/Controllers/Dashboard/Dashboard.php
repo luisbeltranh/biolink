@@ -78,7 +78,6 @@ class Dashboard extends BaseController
                 $validData = $this->validator->getValidated();
                 return redirect()->to('/dashboard/links');
             }
-
             // return redirect()->to('/dashboard/new_link')->withInput();
             //return redirect()->back()->withInput();
         }
