@@ -14,26 +14,26 @@
                         <?= validation_list_errors() ?>
 
                         <div class="mb-3">
-                            <?= form_label('Título', 'tituloEnlace', ['class' => 'form-label']) ?>
+                            <?= form_label('Título (Campo requerido)', 'titulo', ['class' => 'form-label']) ?>
                             <?php
-                            if (validation_show_error('tituloEnlace') == '') {
-                                echo form_input('tituloEnlace', set_value('tituloEnlace'), ['class' => 'form-control', 'id' => 'tituloEnlace']);
+                            if (validation_show_error('titulo') == '') {
+                                echo form_input('titulo', set_value('titulo'), ['class' => 'form-control', 'id' => 'titulo']);
                             } else {
-                                echo form_input('tituloEnlace', set_value('tituloEnlace'), ['class' => 'form-control alert alert-danger', 'id' => 'tituloEnlace']);
+                                echo form_input('titulo', set_value('titulo'), ['class' => 'form-control is-invalid', 'id' => 'titulo']);
                             }
                             ?>
                         </div>
                         <div class="mb-3">
-                            <?= form_label('URL del enlace', 'urlEnlace', ['class' => 'form-label']) ?>
+                            <?= form_label('URL del enlace (Campo requerido)', 'enlace_url', ['class' => 'form-label']) ?>
                             <?php
-                            if (validation_show_error('urlEnlace') == '') {
-                                echo form_input('urlEnlace', set_value('urlEnlace'), ['class' => 'form-control', 'id' => 'urlEnlace']);
+                            if (validation_show_error('enlace_url') == '') {
+                                echo form_input('enlace_url', set_value('enlace_url'), ['class' => 'form-control', 'id' => 'enlace_url']);
                             } else {
-                                echo form_input('urlEnlace', set_value('urlEnlace'), ['class' => 'form-control alert alert-danger', 'id' => 'urlEnlace']);
+                                echo form_input('enlace_url', set_value('enlace_url'), ['class' => 'form-control is-invalid', 'id' => 'enlace_url']);
                             }
                             ?>
 
-                            <?= form_hidden('tipoEnlace', '1') ?>
+                            <?= form_hidden('tipo', '1') ?>
                         </div>
                     </div>
                     <div class="card-footer">

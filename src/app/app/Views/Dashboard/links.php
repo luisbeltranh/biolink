@@ -20,7 +20,7 @@
                                     <a class="icon-link link-primary" href="#">
                                         <i class="bi bi-pencil-square" style="font-size: 1.2rem;"></i>
                                     </a>
-                                    <a class="icon-link link-danger px-3" href="#">
+                                    <a class="icon-link link-danger px-3" href="/dashboard/erase_link/<?= $enlace['id']; ?>">
                                         <i class="bi bi-trash3" style="font-size: 1.2rem;"></i>
                                     </a>
                                 </span>
@@ -33,40 +33,6 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="list-group" id="enlaceid">
-                    <div class="info-box list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Titulo</span>
-                            <span class="info-box-number">Enlace</span>
-                            <span class="progress-description">
-                                <a class="icon-link link-primary" href="#">
-                                    <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:"></i>
-                                </a>
-                                <a class="icon-link link-danger px-3" href="#">
-                                    <i class="bi bi-trash3" style="font-size: 1.2rem;"></i>
-                                </a>
-                            </span>
-                        </div> <!-- /.info-box-content -->
-                    </div> <!-- /.info-box -->
-                    <div class="info-box list-group-item"> <span class="info-box-icon"> <i class="bi bi-arrows-vertical handle"></i> </span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Titulo</span>
-                            <span class="info-box-number">Enlace</span>
-                            <span class="progress-description">
-                                <a class="icon-link link-primary" href="#">
-                                    <i class="bi bi-pencil-square" style="font-size: 1.2rem; color:"></i>
-                                </a>
-                                <a class="icon-link link-danger px-3" href="#">
-                                    <i class="bi bi-trash3" style="font-size: 1.2rem;"></i>
-                                </a>
-                            </span>
-                        </div> <!-- /.info-box-content -->
-                    </div> <!-- /.info-box -->
-                </div>
-            </div>
-        </div>
 
     </div> <!--end::Container-->
 </div> <!--end::App Content-->

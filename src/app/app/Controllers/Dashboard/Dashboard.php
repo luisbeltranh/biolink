@@ -57,18 +57,21 @@ class Dashboard extends BaseController
     public function new_link()
     {
         helper('form');
+        $modelo = new EnlaceModel();
+
         if ($this->request->getMethod() == 'POST') {
             $rules = [
-                'tituloEnlace' => [
+                'titulo' => [
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'El campo "Título" es requerido',
                     ]
                 ],
-                'urlEnlace' => [
-                    'rules' => 'required',
+                'enlace_url' => [
+                    'rules' => 'required|valid_url_strict',
                     'errors' => [
                         'required' => 'El campo "URL del Enlace" es requerido',
+                        'valid_url_strict' => 'El campo "URL del Enlace" debe ser una URL valida',
                     ]
 
                 ],
@@ -76,13 +79,13 @@ class Dashboard extends BaseController
             $data = $this->request->getPost(array_keys($rules));
             if ($this->validateData($data, $rules)) {
                 $validData = $this->validator->getValidated();
+                $modelo->insert($validData);
                 return redirect()->to('/dashboard/links');
             }
             // return redirect()->to('/dashboard/new_link')->withInput();
             //return redirect()->back()->withInput();
         }
 
-        $modelo = new EnlaceModel();
         $enlaces = $modelo->findAll();
         $datos['estaLogeado'] = auth()->loggedIn();
         $datos['nombreUsuario'] = auth()->getUser()->username;
@@ -108,5 +111,16 @@ class Dashboard extends BaseController
         echo view('dashboard/templates/breadcrumbs');
         echo view('dashboard/shop');
         echo view('dashboard/templates/footer');
+    }
+    public function erase_link($id = null)
+    {
+        if (isset($id)) {
+            $modelo = new EnlaceModel();
+            $enlace = $modelo->find($id);
+            if ($enlace) {
+                $modelo->delete($id);
+            }
+            return redirect()->to('/dashboard/links');
+        }
     }
 }
