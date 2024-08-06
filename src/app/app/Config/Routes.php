@@ -14,7 +14,8 @@ $routes->get('ejemplo/tema1', 'Ejemplo::tema1');
 $routes->group('dashboard', function ($routes) {
     $routes->add('', 'Dashboard\Dashboard::index');
     $routes->add('appearance', 'Dashboard\Dashboard::appearance');
-    $routes->add('links', 'Dashboard\Dashboard::links');
+    $routes->add('shop', 'Dashboard\Dashboard::shop');
+    // $routes->add('links', 'Dashboard\Dashboard::links');
     $routes->add('new_link', 'Dashboard\Dashboard::new_link');
     $routes->add('erase_link/(:num)', 'Dashboard\Dashboard::erase_link/$1');
     $routes->add('ver', 'Dashboard\Dashboard::ver');

@@ -10,6 +10,32 @@ class Dashboard extends BaseController
 {
     public function index()
     {
+        // $datos['estaLogeado'] = auth()->loggedIn();
+        // $datos['nombreUsuario'] = auth()->getUser()->username;
+        // $datos['titulo_breadcrumbs'] = "Dashboard";
+        // $datos['menu_activo'] = "dashboard";
+        // echo view('dashboard/templates/head', $datos);
+        // echo view('dashboard/templates/topmenu');
+        // echo view('dashboard/templates/sidebar');
+        // echo view('dashboard/templates/breadcrumbs');
+        // echo view('dashboard/dashboard');
+        // echo view('dashboard/templates/footer');
+        $modelo = new EnlaceModel();
+        $enlaces = $modelo->findAll();
+        $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['nombreUsuario'] = auth()->getUser()->username;
+        $datos['titulo_breadcrumbs'] = "Enlaces";
+        $datos['menu_activo'] = "dashboard";
+        $datos['enlaces'] = $enlaces;
+        echo view('dashboard/templates/head', $datos);
+        echo view('dashboard/templates/topmenu');
+        echo view('dashboard/templates/sidebar');
+        echo view('dashboard/templates/breadcrumbs');
+        echo view('dashboard/links');
+        echo view('dashboard/templates/footer');
+    }
+    public function ver()
+    {
         $datos['estaLogeado'] = auth()->loggedIn();
         $datos['nombreUsuario'] = auth()->getUser()->username;
         $datos['titulo_breadcrumbs'] = "Dashboard";
@@ -20,10 +46,6 @@ class Dashboard extends BaseController
         echo view('dashboard/templates/breadcrumbs');
         echo view('dashboard/dashboard');
         echo view('dashboard/templates/footer');
-    }
-    public function ver()
-    {
-        die('ver');
     }
     public function appearance()
     {
