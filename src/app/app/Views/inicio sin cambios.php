@@ -77,8 +77,7 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted" href="#about">Unirme</a>
-            <a class="buy-btn" href="/login">Iniciar Sesion</a>
+            <a class="btn-getstarted" href="#about">Get Started</a>
 
         </div>
     </header>

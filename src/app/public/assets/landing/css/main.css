@@ -188,7 +188,25 @@ h6 {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
-
+.header .buy-btn {
+    color: var(--contrast-color);
+    display: inline-block;
+    padding: 8px 35px 10px 35px;
+    margin: 0px 0px 0px 30px;
+    border-radius: 50px;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--heading-font);
+    transition: 0.3s;
+    border: 1px solid var(--contrast-color);
+  }
+  
+  .header .buy-btn:hover {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+  }
+  
 @media (max-width: 1200px) {
   .header .logo {
     order: 1;
