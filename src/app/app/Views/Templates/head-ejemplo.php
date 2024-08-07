@@ -36,6 +36,25 @@
     <?php
     }
     ?>
+    <?php
+    if ($estilo == 'tema2') {
+    ?>
+        <link rel="stylesheet" type="text/css" href="/assets/user/css/temadinamico.php">
+        <style>
+            /*===================================
+Background Color
+=====================================*/
+
+            body {
+                /* 1 background-color: #eae7dc; */
+                background-color: #<?= dechex($tema['back_color']) ?>;
+                background-image: linear-gradient(#<?= str_pad(dechex($tema['back_grad_first']), 6, "0", STR_PAD_LEFT) ?>, #<?= str_pad(dechex($tema['back_grad_second']), 6, "0", STR_PAD_LEFT) ?>);
+                transition: all 0.5s;
+            }
+        </style>
+    <?php
+    }
+    ?>
 
 
 </head>

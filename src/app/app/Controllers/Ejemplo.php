@@ -2,7 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
+use App\Models\temaModel;
+use CodeIgniter\Shield\Auth;
+
+
 class Ejemplo extends BaseController
+
 {
     public function index()
     {
@@ -54,6 +60,20 @@ class Ejemplo extends BaseController
         //echo view('templates/topmenu');
         //echo view('templates/navmenu');
         echo view('tema1');
+        echo view('templates/footer-tema');
+    }
+    public function tema2()
+    {
+        $modelo = new temaModel();
+        $temas = $modelo->find('1');
+
+        $datos['estaLogeado'] = auth()->loggedIn();
+        $datos['estilo'] = 'tema2';
+        $datos['tema'] = $temas;
+        echo view('templates/head-ejemplo', $datos);
+        //echo view('templates/topmenu');
+        //echo view('templates/navmenu');
+        echo view('tema2');
         echo view('templates/footer-tema');
     }
 }
