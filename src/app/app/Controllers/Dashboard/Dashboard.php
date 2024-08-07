@@ -49,6 +49,7 @@ class Dashboard extends BaseController
     }
     public function appearance()
     {
+        helper('form');
         $datos['estaLogeado'] = auth()->loggedIn();
         $datos['nombreUsuario'] = auth()->getUser()->username;
         $datos['titulo_breadcrumbs'] = "Apariencia";
@@ -125,7 +126,7 @@ class Dashboard extends BaseController
     {
         $datos['estaLogeado'] = auth()->loggedIn();
         $datos['nombreUsuario'] = auth()->getUser()->username;
-        $datos['titulo_breadcrumbs'] = "Enlaces";
+        $datos['titulo_breadcrumbs'] = "Tienda";
         $datos['menu_activo'] = "tienda";
         echo view('dashboard/templates/head', $datos);
         echo view('dashboard/templates/topmenu');
