@@ -12,6 +12,7 @@ $routes->get('ejemplo/video', 'Ejemplo::video');
 $routes->get('ejemplo/gradiente', 'Ejemplo::gradiente');
 $routes->get('ejemplo/tema1', 'Ejemplo::tema1');
 $routes->get('ejemplo/tema2', 'Ejemplo::tema2');
+$routes->get('tema/(:segment)', 'Tema::index/$1');
 $routes->group('dashboard', function ($routes) {
     $routes->add('', 'Dashboard\Dashboard::index');
     $routes->add('appearance', 'Dashboard\Dashboard::appearance');
